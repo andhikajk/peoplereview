@@ -156,7 +156,7 @@ function calc(){
  const g0=parseFloat($('g').value),w=[],R=IB.map(rd),E=R[0],F=R[1],N=R.slice(2).filter(Boolean),nv=N.length,
  na=nv?N.reduce((a,x)=>a+x.p,0)/nv:NaN,bad=IN.filter((_,i)=>R[i]&&R[i].bad),pn=$('pn');let p0=NaN,cv;
  cap('pe',E);cap('ps',F);
- pn.className=nv&&nv<3?'w':'';
+ pn.className=nv&&nv<4?'w':'';
  pn.textContent=!nv?'':nv<4?`min. 4 orang, sudah terisi ${nv}`:`${nv} orang · rata-rata ${f2(na)}%`;
  if(E&&nv>=4){
   p0=Math.round((WE*E.p+WN*na+WS*(F?F.p:0))*100)/100;
