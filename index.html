@@ -157,11 +157,11 @@ function calc(){
  na=nv?N.reduce((a,x)=>a+x.p,0)/nv:NaN,bad=IN.filter((_,i)=>R[i]&&R[i].bad),pn=$('pn');let p0=NaN,cv;
  cap('pe',E);cap('ps',F);
  pn.className=nv&&nv<3?'w':'';
- pn.textContent=!nv?'':nv<3?`min. 3 orang, baru terisi ${nv}`:`${nv} orang · rata-rata ${f2(na)}%`;
- if(E&&nv>=3){
+ pn.textContent=!nv?'':nv<4?`min. 4 orang, sudah terisi ${nv}`:`${nv} orang · rata-rata ${f2(na)}%`;
+ if(E&&nv>=4){
   p0=Math.round((WE*E.p+WN*na+WS*(F?F.p:0))*100)/100;
   cv=`IBS = ${WE*100}% × <b>${f2(E.p)}</b> + ${WN*100}% × <b>${f2(na)}</b> + ${WS*100}% × <b>${F?f2(F.p):'–'}</b> = <b>${f2(p0)}%</b>`;
- }else cv=E||nv?'Lengkapi '+[!E&&'Evaluator',nv<3&&'minimal 3 Nominate 360'].filter(Boolean).join(' dan '):`IBS = ${WE*100}% Evaluator + ${WN*100}% Nominate 360 + ${WS*100}% Self`;
+ }else cv=E||nv?'Lengkapi '+[!E&&'Evaluator',nv<4&&'minimal 4 Nominate 360'].filter(Boolean).join(' dan '):`IBS = ${WE*100}% Evaluator + ${WN*100}% Nominate 360 + ${WS*100}% Self`;
  $('cv').innerHTML=cv;
  if(bad.length)w.push(`Nilai ${S.m==='s'?'di luar 20–80 atau bukan bilangan bulat':'di luar 25–100'} (${bad.join(', ')}) dihitung sebagai nilai terdekat.`);
  if(!isFinite(g0)||!isFinite(p0)){S.u=null;return}
